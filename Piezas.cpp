@@ -23,7 +23,7 @@
 Piezas::Piezas()
 {
   turn = X;
-  board = {{turn.Blank, turn.Blank, turn.Blank, turn.Blank}, {turn.Blank, turn.Blank, turn.Blank, turn.Blank},{turn.Blank, turn.Blank, turn.Blank, turn.Blank}};
+  board = {{Blank, Blank, Blank, Blank}, {Blank, Blank, Blank, Blank},{Blank, Blank, Blank, Blank}};
 }
 
 /**
@@ -32,7 +32,7 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
-  board = {{turn.Blank, turn.Blank, turn.Blank, turn.Blank}, {turn.Blank, turn.Blank, turn.Blank, turn.Blank},{turn.Blank, turn.Blank, turn.Blank, turn.Blank}};
+  board = {{Blank, Blank, Blank, Blank}, {Blank, Blank, Blank, Blank},{Blank, Blank, Blank, Blank}};
 }
 
 /**
