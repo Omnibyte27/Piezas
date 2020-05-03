@@ -22,12 +22,45 @@ TEST(PiezasTest, sanityCheck)
 	ASSERT_TRUE(true);
 }
 
-TEST(PiezasTest, checkInitial)
+TEST(PiezasTest, checkDrop)
+{
+  Piezas obj;
+  Piece test;
+  test = obj.dropPiece(0);
+  ASSERT_TRUE(test == ' ');
+}
+
+TEST(PiezasTest, checkDrop2)
 {
   Piezas obj;
   Piece test;
   test = obj.dropPiece(1);
-//  char test = (char)obj.dropPiece(1).DivisonStatus.Active;
-//  string test = obj.dropPiece(1).ToString();
   ASSERT_TRUE(test == ' ');
+}
+
+TEST(PiezasTest, checkDrop3)
+{
+  Piezas obj;
+  Piece test;
+  test = obj.dropPiece(2);
+  ASSERT_TRUE(test == ' ');
+}
+
+TEST(PiezasTest, checkDrop4)
+{
+  Piezas obj;
+  Piece test;
+  test = obj.dropPiece(3);
+  ASSERT_TRUE(test == ' ');
+}
+
+TEST(PiezasTest, multiDrop)
+{
+  Piezas obj;
+  Piece test;
+  obj.dropPiece(1);
+  obj.dropPiece(1);
+  obj.dropPiece(1);
+  test = obj.dropPiece(1);
+  ASSERT_TRUE(test == '?');
 }
