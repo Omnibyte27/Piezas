@@ -4,7 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "Piezas.h"
-#include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -216,8 +216,9 @@ TEST(PiezasTest, XWins)
 // O X O O
 // X X X O
   test = obj.gameState();
-//  ASSERT_TRUE(test == 'X');
+  cout << "Results: " << test << endl;
+  ASSERT_TRUE(test == 'X');
 // ASSERT_TRUE(test == 'O');
 // ASSERT_TRUE(test == ' ');
-  ASSERT_TRUE(test == '?');
+// ASSERT_TRUE(test == '?');
 }
