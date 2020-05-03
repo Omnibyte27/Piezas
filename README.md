@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Omnibyte27/Piezas.svg?branch=master)](https://travis-ci.org/Omnibyte27/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/Omnibyte27/Piezas/badge.svg?branch=master)](https://coveralls.io/github/Omnibyte27/Piezas?branch=master)
 # Piezas
 
 ## Associated Enumerated Types
@@ -8,7 +10,7 @@ board
 
 **board** is a 2D vector of Pieces that represents the playing board
 ___
-`Piece turn` 
+`Piece turn`
 
 **turn** represents whose turn it is to place a piece (defaults to X)
 
