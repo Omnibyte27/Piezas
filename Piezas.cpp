@@ -175,7 +175,52 @@ Piece Piezas::gameState()
 /////////////////////////////////////////////////////////////////////////////
         else if(i == 1)
         {
-          return Blank;
+          maxCountC++;
+          maxCountR++;
+          if(board[i+1][j] == board[i][j])
+            maxCountC++;
+          if(board[i-1][j] == board[i][j])
+            maxCountC++;
+          if(j == 0)
+          {
+            for(int l = 0; l < 3; l++)
+            {
+              if(board[i][l] != board[i][j])
+                break;
+              maxCountR++;
+            }
+          }
+          else if(j == 1 || j == 2)
+          {
+            if(j == 1)
+            {
+              if(board[i][j-1] == board[i][j])
+                maxCountR++;
+              if(board[i][j+1] == board[i][j])
+                maxCountR++;
+                if(board[i][j+2] == board[i][j])
+                  maxCountR++;
+            }
+            //{0,2}
+            else if(j == 2)
+            {
+              if(board[i][j+1] == board[i][j])
+                maxCountR++;
+              if(board[i][j-1] == board[i][j])
+                maxCountR++;
+                if(board[i][j-2] == board[i][j])
+                  maxCountR++;
+            }
+          }
+          else if(j == 3)
+          {
+            for(int l = 3; l > -1; l--)
+            {
+              if(board[i][l] != board[i][j])
+                break;
+              maxCountR++;
+            }
+          }
         }
 /////////////////////////////////////////////////////////////////////////////
         else if(i == 2)
