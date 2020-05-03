@@ -25,7 +25,9 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, checkInitial)
 {
   Piezas obj;
-  char test = (char)obj.dropPiece(1).DivisonStatus.Active;
+  Piece test;
+  test = obj.dropPiece(1);
+//  char test = (char)obj.dropPiece(1).DivisonStatus.Active;
 //  string test = obj.dropPiece(1).ToString();
   ASSERT_TRUE(test == ' ');
 }
