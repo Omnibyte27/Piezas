@@ -25,5 +25,6 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, checkInitial)
 {
   Piezas obj;
-  ASSERT_TRUE(obj);
+  string test = obj.dropPiece(1);
+  ASSERT_TRUE(test == ' ');
 }
