@@ -97,7 +97,7 @@ TEST(PiezasTest, pieceStatus2)
   ASSERT_TRUE(test == 'X' && test2 == 'O' && test3 == 'X');
 }
 
-TEST(PiezasTest, pieceStatus)
+TEST(PiezasTest, fullBoard)
 {
   Piezas obj;
   Piece test;
