@@ -112,11 +112,10 @@ Piece Piezas::gameState()
 
       else if(board[i][j] == X || board[i][j] == O)
       {
-
 /////////////////////////////////////////////////////////////////////////////
         if(i == 0)
         {
-          //Case for {0,0}
+          //Case for {0,0} checked
           if(j == 0)
           {
             for(int k = 0; k < 3; k++)
@@ -132,11 +131,10 @@ Piece Piezas::gameState()
               maxCountR++;
             }
           }
-          //Case for {0,1},{0,2}
+          //Case for {0,1},{0,2} checked
           else if(j == 1 || j == 2)
           {
             maxCountC++; //add one for the initial spot
-            maxCountR++;
             if(board[i+1][j] == board[i][j])
               maxCountC++;
               if(board[i+2][j] == board[i][j])
@@ -144,6 +142,7 @@ Piece Piezas::gameState()
             //{0,1}
             if(j == 1)
             {
+              maxCountR++;
               if(board[i][j-1] == board[i][j])
                 maxCountR++;
               if(board[i][j+1] == board[i][j])
@@ -154,6 +153,7 @@ Piece Piezas::gameState()
             //{0,2}
             else if(j == 2)
             {
+              maxCountR++;
               if(board[i][j+1] == board[i][j])
                 maxCountR++;
               if(board[i][j-1] == board[i][j])
@@ -171,9 +171,9 @@ Piece Piezas::gameState()
                 break;
               maxCountC++;
             }
-            for(int l = 3; l > -1; l--)
+            for(int l = 0; l < 4; l++)
             {
-              if(board[i][l] != board[i][j])
+              if(board[i][3-l] != board[i][j])
                 break;
               maxCountR++;
             }

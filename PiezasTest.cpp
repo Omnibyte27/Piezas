@@ -46,7 +46,7 @@ TEST(PiezasTest, checkDrop)
   ASSERT_TRUE(test == ' ' && test2 == ' ' && test3 == ' ' && test4 == ' ');
 }
 
-TEST(PiezasTest, multiDrop)
+TEST(PiezasTest, columnFull)
 {
   Piezas obj;
   Piece test;
@@ -170,6 +170,28 @@ TEST(PiezasTest, tieGame)
   }
   test = obj.gameState();
   ASSERT_TRUE(test == ' ');
+}
+
+TEST(PiezasTest, boardFull)
+{
+  Piezas obj;
+  Piece test;
+  Piece test1;
+  Piece test2;
+  Piece test3;
+
+  for(int i = 0; i < 4; i++)
+  {
+    for(int j = 0; j < 3; j++)
+    {
+      obj.dropPiece(i);
+    }
+  }
+  test = obj.dropPiece(0);
+  test1 = obj.dropPiece(1);
+  test2 = obj.dropPiece(2);
+  test3 = obj.dropPiece(3);
+  ASSERT_TRUE(test == '?' && test1 == '?' && test2 == '?' && test3 == '?');
 }
 
 TEST(PiezasTest, XWins)
