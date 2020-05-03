@@ -25,7 +25,7 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, checkInitial)
 {
   Piezas obj;
-  char test = (obj.dropPiece(1))Enums.DivisonStatus.Active;
+  char test = (char)obj.dropPiece(1).DivisonStatus.Active;
 //  string test = obj.dropPiece(1).ToString();
   ASSERT_TRUE(test == ' ');
 }
