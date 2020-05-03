@@ -111,3 +111,48 @@ TEST(PiezasTest, fullBoard)
   test = obj.gameState();
   ASSERT_TRUE(test == '?');
 }
+
+TEST(PiezasTest, fullBoard)
+{
+  Piezas obj;
+  Piece test;
+  for(int i = 0; i < 3; i++)
+  {
+    for(int j = 0; j < 2; j++)
+    {
+      obj.dropPiece(i);
+    }
+  }
+  test = obj.gameState();
+  ASSERT_TRUE(test == '?');
+}
+
+TEST(PiezasTest, tieGame)
+{
+  Piezas obj;
+  Piece test;
+  for(int i = 0; i < 3; i++)
+  {
+    for(int j = 0; j < 2; j++)
+    {
+      obj.dropPiece(i);
+    }
+  }
+  test = obj.gameState();
+  ASSERT_TRUE(test == ' ');
+}
+
+TEST(PiezasTest, XWins)
+{
+  Piezas obj;
+  Piece test;
+  for(int i = 0; i < 3; i++)
+  {
+    for(int j = 0; j < 2; j++)
+    {
+      obj.dropPiece(i);
+    }
+  }
+  test = obj.gameState();
+  ASSERT_TRUE(test == 'X');
+}
