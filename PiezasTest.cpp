@@ -64,3 +64,19 @@ TEST(PiezasTest, multiDrop)
   test = obj.dropPiece(1);
   ASSERT_TRUE(test == '?');
 }
+
+TEST(PiezasTest, checkDropBounds)
+{
+  Piezas obj;
+  Piece test;
+  test = obj.dropPiece(-1);
+  ASSERT_TRUE(test == '?');
+}
+
+TEST(PiezasTest, checkDropBounds2)
+{
+  Piezas obj;
+  Piece test;
+  test = obj.dropPiece(4);
+  ASSERT_TRUE(test == '?');
+}
