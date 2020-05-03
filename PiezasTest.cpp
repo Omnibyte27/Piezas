@@ -154,7 +154,7 @@ TEST(PiezasTest, notfullBoard)
     }
   }
   test = obj.gameState();
-  ASSERT_TRUE(test == ' ');
+  ASSERT_TRUE(test == '?');
 }
 
 TEST(PiezasTest, tieGame)
@@ -194,5 +194,5 @@ TEST(PiezasTest, XWins)
 // O X O O
 // X X X O
   test = obj.gameState();
-  ASSERT_TRUE(test == '?');
+  ASSERT_TRUE(test == 'X');
 }

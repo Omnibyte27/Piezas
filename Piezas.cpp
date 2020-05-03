@@ -1,7 +1,6 @@
 #include "Piezas.h"
 #include <vector>
-#include <iostream>
-using namespace std;
+
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
  * on the game "Connect Four" where pieces are placed in a column and
@@ -108,10 +107,8 @@ Piece Piezas::gameState()
       maxCountR = 0;
       maxCountC = 0;
       if(board[i][j] == Blank)
-      {
-        cout << "Board isnt full" << endl;
         return Invalid;//Blank spot found, game isnt over
-      }
+
       else if(board[i][j] == X || board[i][j] == O)
       {
 
