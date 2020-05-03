@@ -178,9 +178,9 @@ Piece Piezas::gameState()
         else
         {
 
-        }
+        } */
       }
-*/
+
       //Adjusts biggest X score
       if(board[i][j] == X)
       {
