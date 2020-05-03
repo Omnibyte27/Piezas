@@ -105,6 +105,8 @@ Piece Piezas::gameState()
         return Invalid;//Blank spot found, game isnt over
       else if(board[i][j] == X || board[i][j] == O)
       {
+
+/////////////////////////////////////////////////////////////////////////////
         if(i == 0)
         {
           //Case for {0,0}
@@ -130,7 +132,7 @@ Piece Piezas::gameState()
             maxCountR++;
             if(board[i+1][j] == board[i][j])
               maxCountC++;
-              if(board[i-1][j] == board[i][j])
+              if(board[i+2][j] == board[i][j])
                 maxCountC++;
             //{0,1}
             if(j == 1)
@@ -162,7 +164,7 @@ Piece Piezas::gameState()
                 break;
               maxCountC++;
             }
-            for(int l = 2; l > -1; l--)
+            for(int l = 3; l > -1; l--)
             {
               if(board[i][l] != board[i][j])
                 break;
@@ -170,17 +172,80 @@ Piece Piezas::gameState()
             }
           }
         }
-        /*
+/////////////////////////////////////////////////////////////////////////////
         else if(i == 1)
         {
+          return Blank;
+        }
+/////////////////////////////////////////////////////////////////////////////
+        else if(i == 2)
+        {
+          //Case for {2,0}
+          if(j == 0)
+          {
+            for(int k = 0; k < 2; k++)
+            {
+              if(board[2-k][j] != board[i][j])
+                break;
+              maxCountC++;
+            }
+            for(int l = 0; l < 3; l++)
+            {
+              if(board[i][l] != board[i][j])
+                break;
+              maxCountR++;
+            }
+          }
+          //Case for {2,1},{2,2}
+          else if(j == 1 || j == 2)
+          {
+            maxCountC++; //add one for the initial spot
+            maxCountR++;
+            if(board[i-1][j] == board[i][j])
+              maxCountC++;
+              if(board[i-2][j] == board[i][j])
+                maxCountC++;
+            //{2,1}
+            if(j == 1)
+            {
+              if(board[i][j-1] == board[i][j])
+                maxCountR++;
+              if(board[i][j+1] == board[i][j])
+                maxCountR++;
+                if(board[i][j+2] == board[i][j])
+                  maxCountR++;
+            }
+            //{2,2}
+            else if(j == 2)
+            {
+              if(board[i][j+1] == board[i][j])
+                maxCountR++;
+              if(board[i][j-1] == board[i][j])
+                maxCountR++;
+                if(board[i][j-2] == board[i][j])
+                  maxCountR++;
+            }
+          }
+          //Case for {2,3}
+          else if(j == 3)
+          {
+            for(int k = 0; k < 2; k++)
+            {
+              if(board[2-k][j] != board[i][j])
+                break;
+              maxCountC++;
+            }
+            for(int l = 3; l > -1; l--)
+            {
+              if(board[i][l] != board[i][j])
+                break;
+              maxCountR++;
+            }
+          }
 
         }
-        else
-        {
-
-        } */
       }
-
+/////////////////////////////////////////////////////////////////////////////
       //Adjusts biggest X score
       if(board[i][j] == X)
       {
