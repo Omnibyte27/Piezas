@@ -36,32 +36,14 @@ TEST(PiezasTest, checkDrop)
 {
   Piezas obj;
   Piece test;
+  Piece test2;
+  Piece test3;
+  Piece test4;
   test = obj.dropPiece(0);
-  ASSERT_TRUE(test == ' ');
-}
-
-TEST(PiezasTest, checkDrop2)
-{
-  Piezas obj;
-  Piece test;
-  test = obj.dropPiece(1);
-  ASSERT_TRUE(test == ' ');
-}
-
-TEST(PiezasTest, checkDrop3)
-{
-  Piezas obj;
-  Piece test;
-  test = obj.dropPiece(2);
-  ASSERT_TRUE(test == ' ');
-}
-
-TEST(PiezasTest, checkDrop4)
-{
-  Piezas obj;
-  Piece test;
-  test = obj.dropPiece(3);
-  ASSERT_TRUE(test == ' ');
+  test2 = obj.dropPiece(1);
+  test3 = obj.dropPiece(2);
+  test4 = obj.dropPiece(3);
+  ASSERT_TRUE(test == ' ' && test2 == ' ' && test3 == ' ' && test4 == ' ');
 }
 
 TEST(PiezasTest, multiDrop)
@@ -113,4 +95,19 @@ TEST(PiezasTest, pieceStatus2)
   test2 = obj.pieceAt(1,1);
   test3 = obj.pieceAt(2,1);
   ASSERT_TRUE(test == 'X' && test2 == 'O' && test3 == 'X');
+}
+
+TEST(PiezasTest, pieceStatus)
+{
+  Piezas obj;
+  Piece test;
+  for(int i = 0; i < 3; i++)
+  {
+    for(int j = 0; j < 2; j++)
+    {
+      obj.dropPiece(i)
+    }
+  }
+  test = obj.gameState();
+  ASSERT_TRUE(test == '?');
 }
