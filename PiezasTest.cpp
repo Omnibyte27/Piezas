@@ -141,3 +141,18 @@ TEST(PiezasTest, XWins)
   test = obj.gameState();
   ASSERT_TRUE(test == 'X');
 }
+
+TEST(PiezasTest, OWins)
+{
+  Piezas obj;
+  Piece test;
+  for(int i = 0; i < 3; i++)
+  {
+    for(int j = 0; j < 2; j++)
+    {
+      obj.dropPiece(i);
+    }
+  }
+  test = obj.gameState();
+  ASSERT_TRUE(test == 'O');
+}
