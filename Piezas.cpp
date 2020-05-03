@@ -49,11 +49,15 @@ Piece Piezas::dropPiece(int column)
   {
     return Invalid; //Out of bounds, invalid input
   }
-  for(int i = 2; i > -1; i--)
+  for(int i = 0; i < 3; i++)
   {
     if(board[i][column] == Blank)
     {
       board[i][column] = turn;
+      if(turn == X)
+        turn = O;
+      else
+        turn = X;
       return Blank; //Open spot found
     }
 
