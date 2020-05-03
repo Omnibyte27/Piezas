@@ -131,6 +131,7 @@ TEST(PiezasTest, XWins)
 {
   Piezas obj;
   Piece test;
+  /*
   for(int i = 0; i < 3; i++)
   {
     for(int j = 0; j < 2; j++)
@@ -138,8 +139,21 @@ TEST(PiezasTest, XWins)
       obj.dropPiece(i);
     }
   }
+  */
+  obj.dropPiece(0);
+  obj.dropPiece(0);
+  obj.dropPiece(0);
+  obj.dropPiece(1);
+  obj.dropPiece(1);
+  obj.dropPiece(1);
+  obj.dropPiece(2);
+  obj.dropPiece(2);
+  obj.dropPiece(2);
+  obj.dropPiece(3);
+  obj.dropPiece(3);
+  obj.dropPiece(3);
   test = obj.gameState();
-  ASSERT_TRUE(test == 'X');
+  ASSERT_TRUE(test == 'O');
 }
 
 TEST(PiezasTest, OWins)
