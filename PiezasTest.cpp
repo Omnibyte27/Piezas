@@ -194,5 +194,8 @@ TEST(PiezasTest, XWins)
 // O X O O
 // X X X O
   test = obj.gameState();
-  ASSERT_TRUE(test == 'X');
+//  ASSERT_TRUE(test == 'X');
+  ASSERT_TRUE(test == 'O');
+//  ASSERT_TRUE(test == 'X');
+//  ASSERT_TRUE(test == 'X');
 }
