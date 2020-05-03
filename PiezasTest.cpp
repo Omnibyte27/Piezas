@@ -142,19 +142,19 @@ TEST(PiezasTest, pieceStatus5)
   ASSERT_TRUE(test == 'X' && test2 == 'O' && test3 == 'X');
 }
 
-TEST(PiezasTest, fullBoard)
+TEST(PiezasTest, notfullBoard)
 {
   Piezas obj;
   Piece test;
   for(int i = 0; i < 4; i++)
   {
-    for(int j = 0; j < 3; j++)
+    for(int j = 0; j < 2; j++)
     {
       obj.dropPiece(i);
     }
   }
   test = obj.gameState();
-  ASSERT_TRUE(test == '?');
+  ASSERT_TRUE(test == ' ');
 }
 
 TEST(PiezasTest, tieGame)
@@ -176,42 +176,23 @@ TEST(PiezasTest, XWins)
 {
   Piezas obj;
   Piece test;
-  /*
-  for(int i = 0; i < 3; i++)
-  {
-    for(int j = 0; j < 2; j++)
-    {
-      obj.dropPiece(i);
-    }
-  }
-  */
-  obj.dropPiece(0);
-  obj.dropPiece(0);
-  obj.dropPiece(0);
-  obj.dropPiece(1);
-  obj.dropPiece(1);
-  obj.dropPiece(1);
-  obj.dropPiece(2);
-  obj.dropPiece(2);
-  obj.dropPiece(2);
-  obj.dropPiece(3);
-  obj.dropPiece(3);
-  obj.dropPiece(3);
-  test = obj.gameState();
-  ASSERT_TRUE(test == '?');
-}
+  obj.dropPiece(0); //X
+  obj.dropPiece(0); //O
+  obj.dropPiece(1); //X
+  obj.dropPiece(3); //O
+  obj.dropPiece(2); //X
+  obj.dropPiece(2); //O
+  obj.dropPiece(0); //X
+  obj.dropPiece(3); //O
+  obj.dropPiece(1); //X
+  obj.dropPiece(2); //O
+  obj.dropPiece(3); //X
+  obj.dropPiece(1); //O
 
-TEST(PiezasTest, OWins)
-{
-  Piezas obj;
-  Piece test;
-  for(int i = 0; i < 4; i++)
-  {
-    for(int j = 0; j < 3; j++)
-    {
-      obj.dropPiece(i);
-    }
-  }
+// Board state should be
+// X O O X
+// O X O O
+// X X X O
   test = obj.gameState();
   ASSERT_TRUE(test == '?');
 }
