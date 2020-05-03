@@ -6,6 +6,8 @@
 #include "Piezas.h"
 #include <string>
 
+using namespace std;
+
 class PiezasTest : public ::testing::Test
 {
 	protected:
