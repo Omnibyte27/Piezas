@@ -153,14 +153,14 @@ TEST(PiezasTest, XWins)
   obj.dropPiece(3);
   obj.dropPiece(3);
   test = obj.gameState();
-  ASSERT_TRUE(test == 'O');
+  ASSERT_TRUE(test == '?');
 }
 
 TEST(PiezasTest, OWins)
 {
   Piezas obj;
   Piece test;
-  for(int i = 0; i < 3; i++)
+  for(int i = 0; i < 4; i++)
   {
     for(int j = 0; j < 2; j++)
     {
@@ -168,5 +168,5 @@ TEST(PiezasTest, OWins)
     }
   }
   test = obj.gameState();
-  ASSERT_TRUE(test == 'O');
+  ASSERT_TRUE(test == '?');
 }
