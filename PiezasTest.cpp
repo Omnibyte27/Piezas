@@ -4,6 +4,7 @@
 
 #include <gtest/gtest.h>
 #include "Piezas.h"
+#include <string>
 
 class PiezasTest : public ::testing::Test
 {
@@ -22,6 +23,6 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, checkInitial)
 {
   Piezas obj;
-  String test = obj.turn;
+  string test = obj.turn;
   ASSERT_TRUE(test == 'X');
 }
