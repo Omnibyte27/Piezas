@@ -25,6 +25,5 @@ TEST(PiezasTest, sanityCheck)
 TEST(PiezasTest, checkInitial)
 {
   Piezas obj;
-  string test = obj.turn;
-  ASSERT_TRUE(test == 'X');
+  ASSERT_TRUE(obj);
 }
