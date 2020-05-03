@@ -1,6 +1,6 @@
 #include "Piezas.h"
 #include <vector>
-
+#include <iostream>
 using namespace std;
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
