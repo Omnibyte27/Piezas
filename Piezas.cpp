@@ -195,13 +195,13 @@ Piece Piezas::gameState()
         if(maxCountR > playerO)
           playerO = maxCountR;
         else if(maxCountC > playerO)
-          playerO = maxCountC
+          playerO = maxCountC;
       }
     }
   }
 
   //PlayerO has the most points they win
-  if(player0 > playerX)
+  if(playerO > playerX)
     return O;
   //PlayerX has the most points they win
   else if(playerX > playerO)
