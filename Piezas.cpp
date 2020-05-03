@@ -108,8 +108,10 @@ Piece Piezas::gameState()
       maxCountR = 0;
       maxCountC = 0;
       if(board[i][j] == Blank)
+      {
+        cout << "Spot missing: " << i << "," << j << endl;
         return Invalid;//Blank spot found, game isnt over
-
+      }
       else if(board[i][j] == X || board[i][j] == O)
       {
 /////////////////////////////////////////////////////////////////////////////
