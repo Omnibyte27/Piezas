@@ -1,6 +1,7 @@
 #include "Piezas.h"
 #include <vector>
-
+#include <iostream>
+using namespace std;
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
  * on the game "Connect Four" where pieces are placed in a column and
@@ -302,7 +303,7 @@ Piece Piezas::gameState()
       {
         if(maxCountR > playerX)
           playerX = maxCountR;
-        else if(maxCountC > playerX)
+        if(maxCountC > playerX)
           playerX = maxCountC;
       }
       //Adjusts biggest O score
@@ -310,7 +311,7 @@ Piece Piezas::gameState()
       {
         if(maxCountR > playerO)
           playerO = maxCountR;
-        else if(maxCountC > playerO)
+        if(maxCountC > playerO)
           playerO = maxCountC;
       }
     }
