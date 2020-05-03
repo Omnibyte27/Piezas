@@ -105,7 +105,7 @@ TEST(PiezasTest, fullBoard)
   {
     for(int j = 0; j < 2; j++)
     {
-      obj.dropPiece(i)
+      obj.dropPiece(i);
     }
   }
   test = obj.gameState();
