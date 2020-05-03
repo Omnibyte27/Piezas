@@ -316,6 +316,8 @@ Piece Piezas::gameState()
       }
     }
   }
+  cout << "Player O score is : " << playerO << endl;
+  cout << "Player X score is : " << playerX << endl;
 
   //PlayerO has the most points they win
   if(playerO > playerX)
