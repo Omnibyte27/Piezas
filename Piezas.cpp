@@ -88,7 +88,7 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-  /*
+  //Probably a better way to do this but I could not find a cleaner way to handle all the edgecases
   int playerX = 0;
   int playerO = 0;
   int maxCountR = 0;
@@ -107,22 +107,70 @@ Piece Piezas::gameState()
       {
         if(i == 0)
         {
+          //Case for {0,0}
           if(j == 0)
           {
             for(int k = 0; k < 2; k++)
             {
               if(board[k][j] != board[i][j])
                 break;
-              maxCountR++;
+              maxCountC++;
             }
             for(int l = 0; l < 3; l++)
             {
-              if(board[i[l] != board[i][j]])
+              if(board[i][l] != board[i][j])
+                break;
+              maxCountR++;
+            }
+          }
+          //Case for {0,1},{0,2}
+          else if(j == 1 || j == 2)
+          {
+            maxCountC++; //add one for the initial spot
+            maxCountR++;
+            if(board[i+1][j] == board[i][j])
+              maxCountC++;
+              if(board[i-1][j] == board[i][j])
+                maxCountC++;
+            //{0,1}
+            if(j == 1)
+            {
+              if(board[i][j-1] == board[i][j])
+                maxCountR++;
+              if(board[i][j+1] == board[i][j])
+                maxCountR++;
+                if(board[i][j+2] == board[i][j])
+                  maxCountR++;
+            }
+            //{0,2}
+            else if(j == 2)
+            {
+              if(board[i][j+1] == board[i][j])
+                maxCountR++;
+              if(board[i][j-1] == board[i][j])
+                maxCountR++;
+                if(board[i][j-2] == board[i][j])
+                  maxCountR++;
+            }
+          }
+          //Case for {0,3}
+          else if(j == 3)
+          {
+            for(int k = 0; k < 2; k++)
+            {
+              if(board[k][j] != board[i][j])
                 break;
               maxCountC++;
             }
+            for(int l = 2; l > -1; l--)
+            {
+              if(board[i][l] != board[i][j])
+                break;
+              maxCountR++;
+            }
           }
         }
+        /*
         else if(i == 1)
         {
 
@@ -132,7 +180,7 @@ Piece Piezas::gameState()
 
         }
       }
-
+*/
       //Adjusts biggest X score
       if(board[i][j] == X)
       {
@@ -151,7 +199,13 @@ Piece Piezas::gameState()
       }
     }
   }
-  */
 
-    return Blank;
+  //PlayerO has the most points they win
+  if(player0 > playerX)
+    return O;
+  //PlayerX has the most points they win
+  else if(playerX > playerO)
+    return X;
+  //Tie Game
+  return Blank;
 }
