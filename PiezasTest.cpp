@@ -80,3 +80,12 @@ TEST(PiezasTest, checkDropBounds2)
   test = obj.dropPiece(4);
   ASSERT_TRUE(test == '?');
 }
+
+TEST(PiezasTest, pieceStatus)
+{
+  Piezas obj;
+  Piece test;
+  obj.dropPiece(1);
+  test = obj.pieceAt(0,1);
+  ASSERT_TRUE(test == 'X');
+}
