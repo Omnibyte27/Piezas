@@ -99,9 +99,9 @@ Piece Piezas::gameState()
   int maxCountC = 0;
 
   //Check if board is full
-  for(int i = 0; i < 2; i++)
+  for(int i = 0; i < 3; i++)
   {
-    for(int j = 0; j < 3; j++)
+    for(int j = 0; j < 4; j++)
     {
       maxCountR = 0;
       maxCountC = 0;
@@ -116,13 +116,13 @@ Piece Piezas::gameState()
           //Case for {0,0}
           if(j == 0)
           {
-            for(int k = 0; k < 2; k++)
+            for(int k = 0; k < 3; k++)
             {
               if(board[k][j] != board[i][j])
                 break;
               maxCountC++;
             }
-            for(int l = 0; l < 3; l++)
+            for(int l = 0; l < 4; l++)
             {
               if(board[i][l] != board[i][j])
                 break;
@@ -162,7 +162,7 @@ Piece Piezas::gameState()
           //Case for {0,3}
           else if(j == 3)
           {
-            for(int k = 0; k < 2; k++)
+            for(int k = 0; k < 3; k++)
             {
               if(board[k][j] != board[i][j])
                 break;
@@ -232,13 +232,13 @@ Piece Piezas::gameState()
           //Case for {2,0}
           if(j == 0)
           {
-            for(int k = 0; k < 2; k++)
+            for(int k = 0; k < 3; k++)
             {
               if(board[2-k][j] != board[i][j])
                 break;
               maxCountC++;
             }
-            for(int l = 0; l < 3; l++)
+            for(int l = 0; l < 4; l++)
             {
               if(board[i][l] != board[i][j])
                 break;
@@ -278,7 +278,7 @@ Piece Piezas::gameState()
           //Case for {2,3}
           else if(j == 3)
           {
-            for(int k = 0; k < 2; k++)
+            for(int k = 0; k < 3; k++)
             {
               if(board[2-k][j] != board[i][j])
                 break;
