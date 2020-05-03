@@ -89,3 +89,18 @@ TEST(PiezasTest, pieceStatus)
   test = obj.pieceAt(0,1);
   ASSERT_TRUE(test == 'X');
 }
+
+TEST(PiezasTest, pieceStatus2)
+{
+  Piezas obj;
+  Piece test;
+  Piece test2;
+  Piece test3;
+  obj.dropPiece(1);
+  obj.dropPiece(1);
+  obj.dropPiece(1);
+  test = obj.pieceAt(0,1);
+  test2 = obj.pieceAt(1,1);
+  test3 = obj.pieceAt(2,1);
+  ASSERT_TRUE(test == 'X' && test2 == 'O' && test3 == 'X');
+}
