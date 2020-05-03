@@ -216,9 +216,89 @@ TEST(PiezasTest, XWins)
 // O X O O
 // X X X O
   test = obj.gameState();
-  cout << "Results: " << test << endl;
   ASSERT_TRUE(test == 'X');
 // ASSERT_TRUE(test == 'O');
 // ASSERT_TRUE(test == ' ');
 // ASSERT_TRUE(test == '?');
+}
+TEST(PiezasTest, XWins2)
+{
+  Piezas obj;
+  Piece test;
+  obj.dropPiece(0); //X 1
+  obj.dropPiece(0); //O 2
+  obj.dropPiece(1); //X 3
+  obj.dropPiece(3); //O 4
+  obj.dropPiece(2); //X 5
+  obj.dropPiece(2); //O 6
+  obj.dropPiece(0); //X 7
+  obj.dropPiece(3); //O 8
+  obj.dropPiece(1); //X 9
+  obj.dropPiece(2); //O 10
+  obj.dropPiece(3); //X 11
+  obj.dropPiece(1); //O 12
+
+// Board state should be
+// X O O X
+// O X O O
+// X X X O
+  test = obj.gameState();
+//  ASSERT_TRUE(test == 'X');
+ ASSERT_TRUE(test == 'O');
+// ASSERT_TRUE(test == ' ');
+// ASSERT_TRUE(test == '?');
+}
+TEST(PiezasTest, XWins3)
+{
+  Piezas obj;
+  Piece test;
+  obj.dropPiece(0); //X 1
+  obj.dropPiece(0); //O 2
+  obj.dropPiece(1); //X 3
+  obj.dropPiece(3); //O 4
+  obj.dropPiece(2); //X 5
+  obj.dropPiece(2); //O 6
+  obj.dropPiece(0); //X 7
+  obj.dropPiece(3); //O 8
+  obj.dropPiece(1); //X 9
+  obj.dropPiece(2); //O 10
+  obj.dropPiece(3); //X 11
+  obj.dropPiece(1); //O 12
+
+// Board state should be
+// X O O X
+// O X O O
+// X X X O
+  test = obj.gameState();
+//  ASSERT_TRUE(test == 'X');
+// ASSERT_TRUE(test == 'O');
+ ASSERT_TRUE(test == ' ');
+// ASSERT_TRUE(test == '?');
+}
+TEST(PiezasTest, XWins4)
+{
+  Piezas obj;
+  Piece test;
+  obj.dropPiece(0); //X 1
+  obj.dropPiece(0); //O 2
+  obj.dropPiece(1); //X 3
+  obj.dropPiece(3); //O 4
+  obj.dropPiece(2); //X 5
+  obj.dropPiece(2); //O 6
+  obj.dropPiece(0); //X 7
+  obj.dropPiece(3); //O 8
+  obj.dropPiece(1); //X 9
+  obj.dropPiece(2); //O 10
+  obj.dropPiece(3); //X 11
+  obj.dropPiece(1); //O 12
+
+// Board state should be
+// X O O X
+// O X O O
+// X X X O
+  test = obj.gameState();
+//  ASSERT_TRUE(test == 'X');
+// ASSERT_TRUE(test == 'O');
+// ASSERT_TRUE(test == ' ');
+ ASSERT_TRUE(test == '?');
 }
