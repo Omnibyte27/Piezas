@@ -137,7 +137,7 @@ Piece Piezas::gameState()
             maxCountC++; //add one for the initial spot
             if(board[i+1][j] == board[i][j])
             {
-              maxCountC++
+              maxCountC++;
               if(board[i+2][j] == board[i][j])
                 maxCountC++;
             }
