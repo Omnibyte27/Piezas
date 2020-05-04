@@ -217,3 +217,53 @@ TEST(PiezasTest, OWins)
   test = obj.gameState();
   ASSERT_TRUE(test == 'O');
 }
+
+TEST(PiezasTest, ThreeToThreeTie)
+{
+  Piezas obj;
+  Piece test;
+  obj.dropPiece(1); //X 1
+  obj.dropPiece(0); //O 2
+  obj.dropPiece(3); //X 3
+  obj.dropPiece(2); //O 4
+  obj.dropPiece(1); //X 5
+  obj.dropPiece(2); //O 6
+  obj.dropPiece(1); //X 7
+  obj.dropPiece(0); //O 8
+  obj.dropPiece(0); //X 9
+  obj.dropPiece(3); //O 10
+  obj.dropPiece(3); //X 11
+  obj.dropPiece(2); //O 12
+
+// Board state should be
+// X X O X
+// O X O O
+// O X O X
+  test = obj.gameState();
+  ASSERT_TRUE(test == ' ');
+}
+
+TEST(PiezasTest, FourTopOWin)
+{
+  Piezas obj;
+  Piece test;
+  obj.dropPiece(0); //X 1
+  obj.dropPiece(3); //O 2
+  obj.dropPiece(0); //X 3
+  obj.dropPiece(3); //O 4
+  obj.dropPiece(1); //X 5
+  obj.dropPiece(0); //O 6
+  obj.dropPiece(1); //X 7
+  obj.dropPiece(1); //O 8
+  obj.dropPiece(2); //X 9
+  obj.dropPiece(3); //O 10
+  obj.dropPiece(2); //X 11
+  obj.dropPiece(2); //O 12
+
+// Board state should be
+// O O O O
+// X X X O
+// X X X O
+  test = obj.gameState();
+  ASSERT_TRUE(test == 'O');
+}
